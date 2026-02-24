@@ -8,6 +8,7 @@
 ## Preprocess Steps
 
 To acquire the data necessary for network training, we first sampled the existing dental models. Specifically, we sampled 16384 points from each model to generate the corresponding point cloud data. This point cloud data includes both coordinate and normal information, allowing us to compute the curvature of each point. Additionally, we calculated the Euclidean distance field between each type of landmark feature and the corresponding tooth, resulting in a $16384 × 1$ dimensional output. Subsequently, we supervise the network training by converting the distance of each point into an associated confidence level, as the following equation. In this equation, $C(d)$ represents the confidence level, $d$ is the Euclidean distance, and $k$ is a scaling factor that controls the rate of confidence decay, which we set to $k=0.25$. This formulation allows for a smooth transition of confidence values, where greater distances correspond to lower confidence levels.
+
 $$
 C(d)=e^{-k\cdot d}
 $$
