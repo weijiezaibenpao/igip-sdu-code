@@ -1,0 +1,7 @@
+torch-geometric
+spconv-cu118
+torch-cluster -f https://data.pyg.org/whl/torch-2.1.0+cu118.html
+trimesh
+pydpc
+pymeshlab
+scikit-learn
